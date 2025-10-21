@@ -12,9 +12,9 @@ def get_spotify():
 
     auth = SpotifyOAuth(
         scope=scope,
-        client_id=os.getenv("SPOTIPY_CLIENT_ID"),
-        client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
-        redirect_uri=os.getenv("SPOTIPY_REDIRECT_URI"),
+        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
+        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
+        redirect_uri=os.getenv("SPOTIFY_REDIRECT_URI"),
         open_browser=False,          # <-- don’t try to xdg-open
         show_dialog=False            # set True if you want to force re-consent
     )
