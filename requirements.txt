@@ -1,0 +1,6 @@
+spotipy
+ytmusicapi
+python-dotenv
+rapidfuzz
+tqdm
+tenacity

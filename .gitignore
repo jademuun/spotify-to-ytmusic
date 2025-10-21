@@ -1,0 +1,7 @@
+.env
+docs/browser.json
+.cache*
+.venv/
+__pycache__/
+data/*.json
+data/logs/*.log
