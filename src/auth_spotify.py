@@ -3,14 +3,19 @@ from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 
-load_dotenv()  # picks up .env automatically
+def get_spotify():
+    # Load .env so this works even outside `make`
+    load_dotenv()
 
-SCOPES = "playlist-read-private playlist-read-collaborative"
+    # Scopes you need for reading playlists; add more if required
+    scope = "playlist-read-private playlist-read-collaborative"
 
-def get_spotify() -> Spotify:
-    return Spotify(auth_manager=SpotifyOAuth(
-        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
-        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
-        redirect_uri=os.getenv("SPOTIFY_REDIRECT_URI", "http://localhost:8888/callback"),
-        scope=SCOPES
-    ))
+    auth = SpotifyOAuth(
+        scope=scope,
+        client_id=os.getenv("SPOTIPY_CLIENT_ID"),
+        client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
+        redirect_uri=os.getenv("SPOTIPY_REDIRECT_URI"),
+        open_browser=False,          # <-- don’t try to xdg-open
+        show_dialog=False            # set True if you want to force re-consent
+    )
+    return Spotify(auth_manager=auth)
