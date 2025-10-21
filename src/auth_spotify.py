@@ -1,6 +1,9 @@
 import os
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
+from dotenv import load_dotenv
+
+load_dotenv()  # picks up .env automatically
 
 SCOPES = "playlist-read-private playlist-read-collaborative"
 
