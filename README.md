@@ -71,7 +71,7 @@ Create a `.env` file in the project root with your Spotify Developer App credent
 ```bash
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
-SPOTIFY_REDIRECT_URI=http://localhost:8888/callback
+SPOTIFY_REDIRECT_URI=http://127.0.0.1:8080/callback
 ```
 
 #### 🔍 Where to get these
@@ -93,9 +93,13 @@ SPOTIFY_REDIRECT_URI=http://localhost:8888/callback
 ```bash
 make auth-spotify
 ```
-This opens a browser window to log into Spotify and approve access.  
-Once approved, a `.cache` file is created locally to store your token.
 
+1. Copy that URL from your terminal and open it in any browser.
+2. Log in and approve. You’ll be redirected to http://127.0.0.1:8888/callback?...code=... (it’ll “fail” to load since no server is listening—that’s fine).
+3. Copy the entire redirected URL from the browser address bar and paste it back into the terminal prompt.
+
+
+Once approved, a `.cache` file is created locally to store your token.
 If successful, you’ll see your Spotify username printed in the terminal.
 
 ---
