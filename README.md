@@ -49,7 +49,7 @@ spotify-to-ytmusic/
 ### 1️⃣ Clone and open the project
 
 ```bash
-git clone https://github.com/<yourusername>/spotify-to-ytmusic.git
+git clone https://github.com/jademuun/spotify-to-ytmusic.git
 cd spotify-to-ytmusic
 code .
 ```
